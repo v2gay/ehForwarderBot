@@ -1,9 +1,18 @@
-FROM python:3.6
+FROM python:alpine3.6
 
 WORKDIR /usr/src/app
 
-RUN apt-get update && apt-get install -y \
-    ffmpeg
+ENV LANG C.UTF-8
+
+RUN apk add --update --no-cache ca-certificates
+
+RUN set -ex \
+        && apk add --no-cache --virtual .run-deps \
+                ffmpeg \
+                libmagic \
+                python3 \
+                py3-numpy \
+                py3-pillow
 
 COPY requirements.txt ./
 COPY config.docker.py ./config.py
