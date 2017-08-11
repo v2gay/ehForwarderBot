@@ -16,7 +16,7 @@ RUN set -ex \
 
 COPY requirements.txt ./
 COPY config.docker.py ./config.py
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . .
 
