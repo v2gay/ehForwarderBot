@@ -1,4 +1,4 @@
-FROM python:alpine3.6
+FROM alpine:edge
 
 WORKDIR /usr/src/app
 
@@ -20,4 +20,4 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "./main.py" ]
+CMD [ "python3", "./main.py" ]
