@@ -6,6 +6,7 @@ services:
     restart: always
     volumes:
       - ./log:/var/log
+      - ./storage:/usr/src/app/storage
       - ./tgdata.db:/usr/src/app/plugins/eh_telegram_master/tgdata.db
     environment:
       - BOT_TOKEN=
